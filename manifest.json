@@ -5,9 +5,9 @@
    },
    "description": "Iframe browser by droping all X-Frame-Options and Content-Security-Policy HTTP response headers, allowing most webpages to be iframed.",
    "icons": {
-      "128": "icon128.png",
-      "16": "icon16.png",
-      "48": "icon48.png"
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
    },
    "key": "",
    "manifest_version": 1,
