@@ -1,5 +1,4 @@
 <script>
-/*
 let d = new Date();
 //alert(d);
 
@@ -7,6 +6,9 @@ let hrs = d.getHours();
 let min = d.getMinutes();
 let day = d.getDay();
 let auth = false
+fetch('https://raw.githubusercontent.com/AzlanCoding/iframe-browser-extension/main/lock.txt')
+  .then(response => response.text())
+  .then(data => {
 let lock = `
 d = new Date()
 hrs = d.getHours();
@@ -47,8 +49,13 @@ if (hrs >= 14 || hrs < 8 || breaks() == true|| day == 0 || day == 6|| auth == tr
 }
 //}
 `;
-setInterval(lock,500)
-*/
+if (data = "lock") {
+  setInterval(lock,500);
+}else{
+  alert(data);
+}
+console.log(data);
+  });
 </script>
 
 <!DOCTYPE html>
@@ -62,14 +69,14 @@ body {
   <meta charset="UTF-8">
   <meta name="description" content="Azlan's iframe Browser">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0, no-store">
-  <meta http-equiv="cache-control" content="max-age=0" />
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <!meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0, no-store">
+  <!meta http-equiv="cache-control" content="max-age=0" />
+  <!meta http-equiv="Pragma" content="no-cache">
+  <!meta http-equiv="Expires" content="0">
   <title> Iframe Browser </title>
   <link rel="canonical" href="https://azlancoding.github.io/iframe-browser-extension/" />
   <!link rel="manifest" href="/iframe-browser-pwa/manifest.webmanifest">
-  <meta name="keywords" content="bypass, school, browser in website, cloud browser">
+  <meta name="keywords" content="bypass, school, browser in website, cloud browser, bypass Mobile Guardian">
   <link rel="stylesheet" href="css/styles.css">
   <title> iFrame browser </title>
   <script language="javascript">
@@ -133,7 +140,7 @@ body {
     //margin-top: 60px;
   }
  :root {
-  --fallback-title-bar-height: 45px;
+  --fallback-title-bar-height: 30px;
 }
 
 .draggable {
