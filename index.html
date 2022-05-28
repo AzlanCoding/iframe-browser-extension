@@ -1,0 +1,275 @@
+<script>
+/*
+let d = new Date();
+//alert(d);
+
+let hrs = d.getHours();
+let min = d.getMinutes();
+let day = d.getDay();
+let auth = false
+let lock = `
+d = new Date()
+hrs = d.getHours();
+min = d.getMinutes();
+day = d.getDay();
+//const sec = d.getSeconds();
+//alert(hrs);
+//alert(min);
+function pass() {
+  return prompt("Enter Password:", "Unlocked during 10:40am to 11:20am GMT+0800 (Singapore Standard Time)");
+}
+function word() {
+while (true) {
+	if (pass() == "BZssK37k") {
+	    auth = true;
+	    break
+	}else{
+	    alert("invalid password")
+	    
+	}
+}
+}
+function breaks() {
+	if (hrs == 10 && min >= 40) {
+		return true
+	}else if (hrs == 11 && min < 20) {
+		return true
+	}else {
+		return false
+	}
+}
+if (hrs >= 14 || hrs < 8 || breaks() == true|| day == 0 || day == 6|| auth == true){
+    //alert("pass not needed");
+    
+}else {
+    alert("You are using this webite during school hours. Pls enter the password to bypass. Current time: " + d);
+    word();
+}
+//}
+`;
+setInterval(lock,500)
+*/
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+  background-color: #2C2F33;
+}
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Azlan's iframe Browser">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0, no-store">
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title> Iframe Browser </title>
+  <link rel="canonical" href="https://azlancoding.github.io/iframe-browser-extension/" />
+  <!link rel="manifest" href="/iframe-browser-pwa/manifest.webmanifest">
+  <meta name="keywords" content="bypass, school, browser in website, cloud browser">
+  <link rel="stylesheet" href="css/styles.css">
+  <title> iFrame browser </title>
+  <script language="javascript">
+   //document.getElementById("myIframe").src = "https://wwf.org";
+   var iframe = document.getElementById("myIframe");
+   //var website = iframe.src;
+   //console.log(website);
+   document.addEventListener("scroll", function(event) 
+   {
+    var style = document.getElementById("myIframe").style;
+    style.webkitTransform = style.webkitTransform ? "" : "scale(1)";
+   })
+   /*function resizeIframe()
+   {
+    document.getElementById('myIframe').height = 100%;
+   }*/
+   function ResetBox()
+   {
+   if(document.getElementById("URL").value == '')
+   {document.getElementById("URL").value='';};
+   }
+   function LoadPage()
+   { 
+     var objFrame=document.getElementById("myIframe"); 
+     objFrame.src=document.getElementById("URL").value;
+   }
+   var elem = document.documentElement
+   function openFullscreen() {
+     if (elem.requestFullscreen) 
+     {
+        elem.requestFullscreen();
+     }
+     else if (elem.webkitRequestFullscreen) { 
+        elem.webkitRequestFullscreen();
+     }
+     else if (elem.msRequestFullscreen) { 
+        elem.msRequestFullscreen();
+     }
+   }
+   function closeFullscreen() {
+     if (document.exitFullscreen) 
+     {
+        document.exitFullscreen();
+     } 
+     else if (document.webkitExitFullscreen) 
+     {
+        document.webkitExitFullscreen();
+     } 
+     else if (document.msExitFullscreen) 
+     {
+       document.msExitFullscreen();
+     }
+   }
+  </script>
+  <style>
+  .iframe-container {
+    overflow: visible;
+    /* 16:9 aspect ratio */
+    //padding-top: 56.25%;
+    position: 60px 0px;
+    //margin-top: 60px;
+  }
+ :root {
+  --fallback-title-bar-height: 45px;
+}
+
+.draggable {
+  app-region: drag;
+  /* Pre-fix app-region during standardization process */
+  -webkit-app-region: drag;
+}
+
+.nonDraggable {
+  app-region: no-drag;
+  /* Pre-fix app-region during standardization process */
+  -webkit-app-region: no-drag;
+}
+#child {
+  width: window.innerWidth;
+  //height: window.innerHeight; 
+  height: 100vh;
+  flex: 1 1 auto;
+  position: absolute;
+  top: env(titlebar-area-height, var(--fallback-title-bar-height)); 
+  left: 0;
+  right: 0;
+}
+
+.button {
+  background-color: #ffffff; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  app-region: no-drag;
+  /* Pre-fix app-region during standardization process */
+  -webkit-app-region: no-drag;
+}
+fieldset {
+    border: 0px;
+}
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+#titleBarContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: env(titlebar-area-height, var(--fallback-title-bar-height));
+  width: 100%;
+  background-color:#254B85;
+}
+
+#titleBar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  user-select: none;
+  height: 100%;
+  left: env(titlebar-area-x, 0);
+  //left : 0px;
+  width: env(titlebar-area-width, 50%);
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+}
+
+#titleBar > span {
+  margin: 5;
+  padding: 0px 32px 0px 32px;
+}
+
+#titleBar > input {
+  flex: 1;
+  margin: 0px;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+}
+
+#mainContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: env(titlebar-area-height, var(--fallback-title-bar-height));
+  overflow-y: scroll;
+}
+  </style>
+</head>
+<body style="background-color:#2C2F33">
+<div id="titleBarContainer" >
+      <div id="titleBar">
+        <span class="draggable">Iframe Browser</span>
+        <input class="nonDraggable" type="text" ID="URL" placeholder="Enter a URL" value="https://www.google.com"></input>
+	<input type="submit" class="frmSubmit" value="Go" onclick="LoadPage()">
+        <input type="button" VALUE="&#65513"  onClick="history.back()"> 
+        <input type="button" VALUE="&#65515"  onClick="history.forward()"> 
+        <input type="button" class="fullscreen" value="&#x26F6;" onclick="openFullscreen()">
+        <input type="button" class="Exitfullscreen" value="Exit Fullscreen" onclick="closeFullscreen()">
+        <input type="button" class="newWindow" value="New Window" onclick="window.open('https://azlancoding.github.io/iframe-browser-pwa/','_blank')">
+        <input type="button" class="cloudbrowser" value="Cloud Browser" onclick="window.open('https://replit.com/@azlancoding/free-and-unlimited-cloud-browser?embed=true','_blank')">
+      </div>
+</div>
+<!div style="Clear:both;"> 
+ <!input type="text" value="https://www.google.com" class="frmUrlVal" ID="URL" placeholder = "Enter a URL" >
+<!/div>
+<div id = "child" >
+<iframe align="top" width="100%" height="100%" allowtransparency="true" style="background: #FFFFFF;" src="https://www.google.com" allow="camera;microphone" frameborder=yes loading ="lazy" name="myIframe" id="myIframe"> </iframe>
+</div>
+<script>
+window.onbeforeunload = () => '';
+var urlbox = document.getElementById("URL");
+urlbox.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {
+        LoadPage();
+    }
+});
+function check(){
+  document.getElementById("URL").value = "";
+}
+</script>
+  <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          '/iframe-browser-extension/sw.js',
+          {scope: '/iframe-browser-extension/'}
+        )
+      }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
