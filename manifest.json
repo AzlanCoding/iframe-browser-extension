@@ -9,6 +9,7 @@
       "16": "img/icon16.png",
       "48": "img/icon48.png"
    },
+   "key" : 2,
    "manifest_version": 1,
    "name": "Iframe Browser",
    "permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls>" ],
