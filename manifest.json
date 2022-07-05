@@ -3,6 +3,9 @@
    "background": {
       "scripts": [ "js/background.js" ]
    },
+   "browser_action": {
+	"default_popup": "index.html"
+   },
    "description": "Iframe browser by droping all X-Frame-Options and Content-Security-Policy HTTP response headers, allowing most webpages to be iframed.",
    "icons": {
       "128": "img/icon128.png",
